@@ -40,7 +40,7 @@ class Laporanpinjam extends CI_Controller {
         $data['label'] = $label;
 
        
-        $this->template->load('template', 'semualaporan/viewlaporanpinjam', $data);
+        $this->template->load('template', 'semualaporan/viewlaporanpinjama', $data);
        
     }
 
