@@ -2,15 +2,7 @@
 
 class Pinjam_m extends CI_Model {
 
-public function get($id = null)
-{
-    $this->db->from('tabel_peminjam');
-    if($id != null) {
-        $this->db->where('peminjam_id', $id);
-            }
-            $query = $this->db->get();
-            return $query;
-}
+
 
 public function del($id)
 {

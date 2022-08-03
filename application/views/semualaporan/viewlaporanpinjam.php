@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
  
-    <title>Laporan Data Pinjam Barang</title>
+    <title>Laporan Data Supplier</title>
 
 </head>
 <body>
     <div style="padding: 15px;">
-        <h3 style="margin-top: 0;"><b>Laporan Data Pinjam barang</b></h3>
+        <h3 style="margin-top: 0;"><b>Laporan PDF Plus Filter Periode Tanggal</b></h3>
         <hr />
 
-        <form method="get" action="<?php echo base_url('index.php/transaksi/index') ?>">
+        <form method="get" action="<?php echo base_url('index.php/laporanpinjam/index') ?>">
             <div class="row">
                 <div class="col-sm-6 col-md-4">
                     <div class="form-group">
@@ -31,12 +31,12 @@
 
             <?php
             if(isset($_GET['filter'])) // Jika user mengisi filter tanggal, maka munculkan tombol untuk reset filter
-                echo '<a href="'.base_url('index.php/transaksi/index').'" class="btn btn-default">RESET</a>';
+                echo '<a href="'.base_url('index.php/laporanpinjam/index').'" class="btn btn-default">RESET</a>';
             ?>
         </form>
 
         <hr />
-        <h4 style="margin-bottom: 5px;"><b>Data Peminjam</b></h4>
+        <h4 style="margin-bottom: 5px;"><b>Data Supplier</b></h4>
         <?php echo $label ?><br />
 
         <div style="margin-top: 5px;">
@@ -50,34 +50,32 @@
                     <th style="width: 10px">#</th>
                     
                     <th>Barcode</th>
-                    <th>Product Item</th>
                     <th>Nama peminjam</th>
                     <th>Quantyty</th>
-                    <th>Kondisi barang</th>
-                    <th>Statusbarang di</th>
+                    <th>Kondisi Barang Dikembalikan</th>
                     <th>TGL.PINJAM</th>
                     <th>TGL.KEMBALI</th>
+                    <th>Status barang di</th>
                     
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $no =1;
+                <?php $no =1;
                     if(empty($transaksi)){ // Jika data tidak ada
                         echo "<tr><td colspan='5'>Data tidak ada</td></tr>";
                     }else{ // Jika jumlah data lebih dari 0 (Berarti jika data ada)
                         foreach($transaksi as $data){ // Looping hasil data transaksi
                             $tgl = date('d-m-Y', strtotime($data->tanggalpinjam)); // Ubah format tanggal jadi dd-mm-yyyy
-                            $tgl2 = date('d-m-Y', strtotime($data->tanggaldikembalikan));
+
                             echo "<tr>";
                             echo "<td>".$no++."</td>";
-                            echo "<td>".$barcode."</td>";
-                            echo "<td>".$item_name."</td>";
-                            echo "<td>".$namapeminjam."</td>";
-                            echo "<td>".$qty."</td>";
-                            echo "<td>".$kondisibarang."</td>";
-                            echo "<td>".$barcode."</td>";
+                            echo "<td>".$data->barcode."</td>";
+                            echo "<td>".$data->namapeminjam."</td>";
+                            echo "<td>".$data->qty."</td>";
+                            echo "<td>".$data->kondisibarang."</td>";
                             echo "<td>".$tgl."</td>";
-                            echo "<td>".$tgl2."</td>";    
+                            echo "<td>".$data->tanggaldikembalikan."</td>";
+                            echo "<td>".$data->status."</td>";
                             echo "</tr>";
                         }
                     }
