@@ -121,4 +121,20 @@ public function edit($post){
 	$this->db->query($sql);
  }
 
+ function update_identifikasibarang_out($data)
+ {
+	$qty = $data['qty'];
+	$id = $data['item_id'];
+	$sql= "UPDATE tabel_produkitem SET stock = stock - '$qty' WHERE item_id = '$id'";
+	$this->db->query($sql);
+ }
+
+ function update_identifikasibarang_in($data)
+ {
+	$qty = $data['qty'];
+	$id = $data['item_id'];
+	$sql= "UPDATE tabel_produkitem SET stock = stock + '$qty' WHERE item_id = '$id'";
+	$this->db->query($sql);
+ }
+
 }

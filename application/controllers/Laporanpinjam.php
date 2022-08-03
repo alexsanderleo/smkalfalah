@@ -73,7 +73,7 @@ class Laporanpinjam extends CI_Controller {
           $data['transaksi'] = $transaksi;
   
       ob_start();
-      $this->load->view('print', $data);
+      $this->load->view('semualaporan/printlaporanpinjam', $data);
       $html = ob_get_contents();
           ob_end_clean();
   

@@ -251,7 +251,7 @@
               <li class="nav-item">
                 <a href="<?= base_url('item') ?>"  class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Item apa saja</p>
+                  <p>Stock</p>
                 </a>
               </li>
            
@@ -267,9 +267,9 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Status Barang
+                Barang Masuk/Kel
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
+                <span class="badge badge-info right">2</span>
               </p>
             </a>
             <ul class="nav nav-treeview"  >
@@ -283,10 +283,42 @@
               <li class="nav-item">
                 <a href="<?= base_url('stock/out') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>keluar/rusak/hangus</p>
+                  <p>Barang hilang/keluar</p>
                 </a>
               </li>
-           
+            </ul>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Identity Barang
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">6</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview"  >
+              <li class="nav-item">
+                <a href="<?= base_url('identifikasibarang/out') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Barang rusak</p>
+                </a>
+              </li>
+             
+              <li class="nav-item">
+                <a href="<?= base_url('stock/out') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Diperbaiki</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('stock/out') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Rusak total/hangus</p>
+                </a>
+              </li>
             </ul>
           </li>
 

@@ -37,19 +37,12 @@ class Laporanpinjam_model extends CI_Model {
         JOIN tabel_produkitem b ON a.item_id=b.item_id GROUP BY a.peminjam_id")->result(); // Tampilkan semua data query pinjam
 	}
     public function view_by_date($tgl_awal, $tgl_akhir){
-        $tgl_awal = $this->db->escape($tgl_awal);
-        $tgl_akhir = $this->db->escape($tgl_akhir);
-        $this->db->where('DATE(tanggalpinjam) BETWEEN '.$tgl_awal.' AND '.$tgl_akhir);
-		return $this->db->get("tabel_peminjam "); // Tampilkan semua data query pinjam
-
-
-       $this->db->from('tabel_peminjam');
-    $this->db->join('tabel_produkitem', 'tabel_peminjam.item_id= tabel_produkitem.item_id');
-   
-    $this->db->where('type', 'in');
-    $this->db->order_by('peminjam_id', 'desc');
-    $query = $this->db->get();
-    return $query;
+        $query = $this->db->query("SELECT a.namapeminjam, a.qty, a.nik,a.status,a.tanggalpinjam,a.tanggaldikembalikan,a.kondisibarang, b.barcode, b.name as item_name 
+        FROM tabel_peminjam a 
+        JOIN tabel_produkitem b ON a.item_id=b.item_id where
+        tanggaldikembalikan BETWEEN '$tgl_awal' and '$tgl_akhir' ORDER BY tanggaldikembalikan ASC  ");
+        return $query->result();
+	
 	}
    
 

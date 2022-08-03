@@ -68,3 +68,13 @@ $route['pinjam/in/add'] = 'pinjam/pinjam_in_add';
 $route['pinjam/in/del/(:num)/(:num)'] = 'pinjam/pinjam_in_del';
 $route['pinjam/in/deldua/(:num)/(:num)'] = 'pinjam/pinjam_in_deldua';
 
+
+/*
+|--------------------------ROUTING KE IDENTIFIKASI BARANG RUSAK---------------------------------------------------------
+|
+|
+|
+*/
+$route['identifikasibarang/out'] = 'identifikasibarang/identifikasibarang_in_dataout';
+$route['identifikasibarang/in/addout'] = 'identifikasibarang/identifikasibarang_in_addout';
+$route['identifikasibarang/in/deldua/(:num)/(:num)'] = 'identifikasibarang/identifikasibarang_in_deldua';

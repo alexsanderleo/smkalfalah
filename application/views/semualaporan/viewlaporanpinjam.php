@@ -63,7 +63,7 @@
                 <?php $no =1;
                     if(empty($transaksi)){ // Jika data tidak ada
                         echo "<tr><td colspan='5'>Data tidak ada</td></tr>";
-                    }else{ // Jika jumlah data lebih dari 0 (Berarti jika data ada)
+                    }else{ // Jika jumlah data lebih dari 0 (Berati iki data ada)
                         foreach($transaksi as $data){ // Looping hasil data transaksi
                             $tgl = date('d-m-Y', strtotime($data->tanggalpinjam)); // Ubah format tanggal jadi dd-mm-yyyy
 
