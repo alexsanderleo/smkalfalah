@@ -59,4 +59,45 @@ class Identifikasibarang extends CI_Controller {
      redirect('identifikasibarang/out');
  
      }
+
+     public function edit($id) 
+    {
+        $query = $this->identifikasibarang_m->get_identifikasibarang_edit($id);
+        $item= $this->item_m->get()->result();
+        $supplier= $this->supplier_m->get()->result();
+        $data = $this->identifikasibarang_m->get_identifikasibarang_edit()->result(); 
+        
+        if($query->num_rows() > 0 ) {
+            
+            $identifikasibarang = $query->row();
+            $data = array(
+                'page' => 'edit',
+                'item'=> $item,
+                'supplier'=> $supplier,
+                'row' => $data
+              
+            );
+                  
+            
+            $this->template->load('template', 'identifikasibarang/perbaikan/viewupdateperbaikan', $data);
+        }else{
+            echo"<script>alert('Data tidak ditemukan');";
+                    echo "window.location='".site_url('supplier')."';</script>";
+        }
+        
+    }
+
+    public function processsimpanupdate(){
+        if(isset($_POST['out_add'])){
+            $post = $this->input->post(null, TRUE);
+            $this->identifikasibarang_m->tambahidentifikasiupdate($post);
+            $this->item_m->updateperbaikan($post);
+            if($this->db->affected_rows() > 0){
+                $this->session->set_flashdata('success', 'Data identifikasibarang-Outguwak berhasil disimpan');
+            }
+            redirect('identifikasibarang/out');
+        }
+    }
+
+        
 }

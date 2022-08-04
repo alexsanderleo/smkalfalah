@@ -137,4 +137,9 @@ public function edit($post){
 	$this->db->query($sql);
  }
 
+ function updateperbaikan($data)
+ {
+	
+ }
+
 }

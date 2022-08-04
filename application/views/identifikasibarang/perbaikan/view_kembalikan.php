@@ -1,19 +1,19 @@
 
  <section class="content-header">
  <div class="box-header">
-                <h3 class="box-title">identifikasi kerusakan barang</h3>
+                <h3 class="box-title">Barang di pinjamkan</h3>
               </div>
               <!-------------------------MEnambahkan buton-------------------->
               <div class="card-body">
         <div class="col-md-4 col-md-offset-4">
-          <a href="<?=site_url('identifikasibarang/out')?>" class="btn btn-secondary">Kembali</a>
+          <a href="<?=site_url('')?>" class="btn btn-secondary">Kembali</a>
         </div>
       </div>
  
 
 <div class="box">
 <div class="btn pull-right">
-              <a href="<?=base_url('identifikasibarang/in/addout')?>" class="btn btn-primary">  <!--controler e -->
+              <a href="<?=base_url('pinjamkembalikan/tambah')?>" class="btn btn-primary">
               Tambah
                 </a>     
               </div>
@@ -28,12 +28,15 @@
                 <thead>
                   <tr>
                     <th style="width: 10px">#</th>
-                    <th>Barcode kerusakan</th>
-                    <th>Nama barang</th>
-                    <th>Keterangan rusak</th>
-                    <th>Tanggal</th>
+                    <th>Barcode</th>
+                    <th>Product Item</th>
+                    <th>Nama peminjam</th>
+                    <th>Quantyty</th>
+                    <th>Kondisi Barang Dikembalikan</th>
+                    <th>TGL.PINJAM</th>
+                    <th>TGL.KEMBALI</th>
+                    <th>Status barang di</th>
                     <th>Opsi</th>
-                    
                    
                     
                     
@@ -45,21 +48,24 @@
                   foreach($row as $key => $data){  ?>
                    <tr>
                     <td><?=$no++?>.</td>
-                    <td><?=$data->barcodekerusakan?></td>
+                    <td><?=$data->barcode?></td>
                     <td><?=$data->item_name?></td>
-                    
-                    <td><?=$data->keteranganrusak?></td>
-                    <td><?=indo_date($data->date)?></td>
-                    
+                    <td><?=$data->namapeminjam?></td>
+                    <td><?=$data->qty?></td>
+                    <td><?=$data->kondisibarang?></td>
+                    <td><?=indo_date($data->tanggalpinjam)?></td>
+                    <td><?=indo_date($data->tanggaldikembalikan)?></td>
+                    <td><?=$data->status?></td>
                        <td>
-                       <div class="card-btn">
-              <a class="btn btn-primary btn-sm" href="<?=site_url('identifikasibarang/edit/'.$data->stock_id)?>" onclick="return confirm('Yakin edit data?')" >  <!--$tampilno kwi dari 1 form ini--------------------------->
+
+                      <!--------------------------------------------MEMBUAT----------------------------------------BTN--EDIT--HAPUYS START--------------------------->
+                      <div class="card-btn">
+              <a class="btn btn-primary btn-sm" href="<?=site_url('pinjamkembalikan/edit/'.$data->peminjam_id)?>" onclick="return confirm('Yakin edit data?')" >  <!--$tampilno kwi dari 1 form ini--------------------------->
                               
                               </i>
-                              Perbaiki
-                      <!--------------------------------------------MEMBUAT----------------------------------------BTN--EDIT--HAPUYS START--------------------------->
-           
-                      <a class="btn btn-danger btn-sm" href="<?=site_url('identifikasibarang/in/deldua/'.$data->stock_id.'/'.$data->item_id)?>"onclick="return confirm('Yakin hapus data?')">
+                              Kembalikan barang pinjam
+                              </a>
+                      <a class="btn btn-danger btn-sm" href="<?=site_url('pinjamkembalikan/del/'.$data->peminjam_id.'/'.$data->item_id)?>"onclick="return confirm('Yakin akan mengembalikan pinjaman?')">
                               </i>
                               Delete
                               </a>

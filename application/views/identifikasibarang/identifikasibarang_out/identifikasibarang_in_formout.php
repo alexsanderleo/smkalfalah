@@ -83,8 +83,8 @@
       
 
               <div class="form-group">
-                <label>Details * </label>
-                <input type="text" name="detail"  class="form-control" placeholder="rusak / dibuang / guwak" >
+                <label>Keterangan barang rusak * </label>
+                <input type="text" name="keteranganbarangrusakcbb"  class="form-control" placeholder="rusak kenapa?" >
               </div>
     
              
