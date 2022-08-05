@@ -67,6 +67,7 @@ $route['pinjam/in/add'] = 'pinjam/pinjam_in_add';
 
 $route['pinjam/in/del/(:num)/(:num)'] = 'pinjam/pinjam_in_del';
 $route['pinjam/in/deldua/(:num)/(:num)'] = 'pinjam/pinjam_in_deldua';
+$route['pinjamkembalikan/in/del/(:num)/(:num)'] = 'pinjam/pinjam_in_del';
 
 
 /*
@@ -76,5 +77,8 @@ $route['pinjam/in/deldua/(:num)/(:num)'] = 'pinjam/pinjam_in_deldua';
 |
 */
 $route['identifikasibarang/out'] = 'identifikasibarang/identifikasibarang_in_dataout';
+$route['identifikasibarang/perawatan'] = 'identifikasibarang/dataperawatan';
+$route['identifikasibarang/rusak'] = 'identifikasibarang/datakerusakan';
 $route['identifikasibarang/in/addout'] = 'identifikasibarang/identifikasibarang_in_addout';
 $route['identifikasibarang/in/deldua/(:num)/(:num)'] = 'identifikasibarang/identifikasibarang_in_deldua';
+$route['identifikasibarang/in/delrusak/(:num)/(:num)'] = 'identifikasibarang/identifikasibarang_in_delrusak';

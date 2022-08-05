@@ -3,6 +3,15 @@
 class Pinjam_m extends CI_Model {
 
 
+    public function get($id = null)
+    {
+        $this->db->from('tabel_peminjam');
+        if($id != null) {
+            $this->db->where('peminjam_id', $id);
+                }
+                $query = $this->db->get();
+                return $query;
+    }
 
 public function del($id)
 {
@@ -30,11 +39,37 @@ public function get_pinjam_in()
     $this->db->from('tabel_peminjam');
     $this->db->join('tabel_produkitem', 'tabel_peminjam.item_id= tabel_produkitem.item_id');
    
-    $this->db->where('type', 'in');
+    $this->db->where('status', 'P');
     $this->db->order_by('peminjam_id', 'desc');
     $query = $this->db->get();
     return $query;
 }
+
+public function gettampilpeminjamdibalekne($id = null) //get relasi 2 tabel
+	{
+        $this->db->select(
+            'tabel_peminjam.peminjam_id, 
+            tabel_produkitem.barcode,
+            tabel_produkitem.name as item_name,
+            namapeminjam,
+            qty,
+            nik,
+            kondisibarang,
+            tanggalpinjam,
+            tanggaldikembalikan,  
+            status,
+            
+            tabel_produkitem.item_id');
+            $this->db->from('tabel_peminjam');
+            $this->db->join('tabel_produkitem', 'tabel_peminjam.item_id= tabel_produkitem.item_id', 'left');
+            $this->db->where('type', 'in');
+		$this->db->order_by('peminjam_id', 'desc');
+		$query = $this->db->get();
+		return $query;
+		
+
+	}
+
 
 public function tampilkanseluruhdatane()
 {

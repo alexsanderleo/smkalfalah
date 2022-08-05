@@ -308,13 +308,13 @@
               </li>
              
               <li class="nav-item">
-                <a href="<?= base_url('stock/out') ?>" class="nav-link">
+                <a href="<?= base_url('identifikasibarang/perawatan') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Diperbaiki</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url('stock/out') ?>" class="nav-link">
+                <a href="<?= base_url('identifikasibarang/rusak') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Rusak total/hangus</p>
                 </a>

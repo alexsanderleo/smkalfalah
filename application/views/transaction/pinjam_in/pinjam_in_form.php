@@ -76,7 +76,7 @@
               </div>
               <div class="form-group">
                 <label>Nama peminjam * </label>
-                <input type="text" name="namapeminjame" id="namapeminjame" class="form-control" required>
+                <input type="text" name="namapeminjame" id="namapeminjame"  class="form-control" required>
               </div>
       
               <div class="form-group" required>

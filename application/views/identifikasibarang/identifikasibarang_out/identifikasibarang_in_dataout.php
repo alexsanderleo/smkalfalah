@@ -19,6 +19,8 @@
               </div>
       
 </div>
+
+
        
 
   
@@ -31,7 +33,9 @@
                     <th>Barcode kerusakan</th>
                     <th>Nama barang</th>
                     <th>Keterangan rusak</th>
-                    <th>Tanggal</th>
+                    <th>Tanggal rusak</th>
+                    <th>Keterangan diperbaiki</th>
+                    <th>Diperbaiki tanggal</th>
                     <th>Opsi</th>
                     
                    
@@ -50,13 +54,29 @@
                     
                     <td><?=$data->keteranganrusak?></td>
                     <td><?=indo_date($data->date)?></td>
+                    <td><?=$data->detailperbaikan?></td>
+                    <td><?=indo_date($data->diperbaikitanggal)?></td>
                     
                        <td>
-                       <div class="card-btn">
-              <a class="btn btn-primary btn-sm" href="<?=site_url('identifikasibarang/edit/'.$data->stock_id)?>" onclick="return confirm('Yakin edit data?')" >  <!--$tampilno kwi dari 1 form ini--------------------------->
+                      
+            
+                 
+           <div class="card-btn">
+              <a class="btn btn-info btn-sm" href="<?=site_url('identifikasibarang/edit2/'.$data->stock_id)?>" >  <!--$tampilno kwi dari 1 form ini--------------------------->
                               
                               </i>
                               Perbaiki
+                  </a>
+           
+                  <a class="btn btn-warning btn-sm" href="<?=site_url('identifikasibarang/editrusak/'.$data->stock_id)?>"onclick="return confirm('Yakin barang rusak?')">
+                              </i>
+                              Rusak
+                              </a>
+                        </i>
+           
+                    
+
+                          
                       <!--------------------------------------------MEMBUAT----------------------------------------BTN--EDIT--HAPUYS START--------------------------->
            
                       <a class="btn btn-danger btn-sm" href="<?=site_url('identifikasibarang/in/deldua/'.$data->stock_id.'/'.$data->item_id)?>"onclick="return confirm('Yakin hapus data?')">

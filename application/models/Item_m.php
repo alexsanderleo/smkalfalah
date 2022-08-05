@@ -141,5 +141,40 @@ public function edit($post){
  {
 	
  }
+ 
 
+ public function tampilkankeperbaikanedit($id = null) //get relasi 2 tabel
+	{
+		$this->db->select('tabel_produkitem.*, tabel_produkcategory.name as kategori_name, tabel_produkunit.name as unite_name ');
+		$this->db->from('tabel_produkitem');
+		$this->db->join('tabel_produkcategory', 'tabel_produkcategory.category_id = tabel_produkitem.category_id');
+		$this->db->join('tabel_produkunit', 'tabel_produkunit.unit_id = tabel_produkitem.unit_id');
+		
+		if($id != null) {
+			$this->db->where('item_id', $id);
+
+		}
+		$this->db->order_by('barcode', 'asc');
+		$query = $this->db->get();
+		return $query;
+		
+
+	}
+
+	function updatekerusakantotal($data)
+ {
+	$qty = $data['qty'];
+	$id = $data['item_id'];
+	$sql= "UPDATE tabel_produkitem SET stock = stock - '$qty' WHERE item_id = '$id'";
+	$this->db->query($sql);
+ }
+
+ function updatesetelahdideleterusak($data)
+ {
+	$qty = $data['qty'];
+	$id = $data['item_id'];
+	$sql= "UPDATE tabel_produkitem SET stock = stock + '$qty' WHERE item_id = '$id'";
+	$this->db->query($sql);
+ }
+	
 }
