@@ -103,9 +103,9 @@ class Pinjam extends CI_Controller {
       
     }
 
-    public function edit($id) 
+    public function edit() 
     {
-        $query = $this->pinjam_m->get_pinjam_in($id);
+        $query = $this->pinjam_m->get_pinjam_in();
         $item= $this->item_m->get()->result();
         $supplier= $this->supplier_m->get()->result();
         $data = $this->pinjam_m->get_pinjam_in()->result(); 

@@ -67,7 +67,7 @@ $route['pinjam/in/add'] = 'pinjam/pinjam_in_add';
 
 $route['pinjam/in/del/(:num)/(:num)'] = 'pinjam/pinjam_in_del';
 $route['pinjam/in/deldua/(:num)/(:num)'] = 'pinjam/pinjam_in_deldua';
-$route['pinjamkembalikan/in/del/(:num)/(:num)'] = 'pinjam/pinjam_in_del';
+$route['pinjamkembalikan/in/del/(:num)/(:num)'] = 'pinjamkembalikan/delgakpengaruhstock';
 
 
 /*

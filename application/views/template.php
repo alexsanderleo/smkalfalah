@@ -8,7 +8,8 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?=base_url()?>assets/plugins/fontawesome-free/css/all.min.css">
+ <!-- <link rel="stylesheet" href="<?=base_url()?>assets/plugins/fontawesome-free/css/all.min.css">  -->
+  <link rel="stylesheet" href="<?=base_url()?>assets/plugins/fontawesome-free-versine6/css/all.min.css">
   <link rel="stylesheet" href="<?=base_url()?>assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="<?=base_url()?>assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="<?=base_url()?>assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
@@ -29,10 +30,10 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="<?=base_url()?>assets/index3.html" class="nav-link">Home</a>
+        <a href="<?=base_url()?>assets/index3.html" class="nav-link " >Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <a href="#" class="nav-link " >Contact</a>
       </li>
     </ul>
 
@@ -199,8 +200,9 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <!-- menambahkan nav baru li diahiri </li -->
+                        
                         <li class="nav-item">
-                            <a href="<?= base_url('dashboard') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'dashboard') echo 'active' ?>">
+                            <a href="<?= base_url('dashboard') ?>" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>Dashboard</p>
                             </a>
@@ -208,26 +210,18 @@
 
                     <!-- menambahkan nav baru li diahiri </li -->
                     <li class="nav-item">
-                            <a href="<?= base_url('supplier') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'supplier') echo 'active' ?>">
+                            <a href="<?= base_url('supplier') ?>" class="nav-link ">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>Data Supplier</p>
                             </a>
                         </li>
 
-
-                        <!-- menambahkan nav baru li diahiri </li -->
-                        <li class="nav-item">
-                            <a href="<?= base_url('customer') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'customer') echo 'active' ?>">
-                                <i class="nav-icon fas fa-users"></i>
-                                <p>Customer</p>
-                            </a>
-                        </li>
-
                        
-
+                    
 
                         <li class="nav-item">
-            <a href="#" class="nav-link">
+                          
+            <a href="#" class="nav-link " >
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Data Barang
@@ -235,21 +229,27 @@
                 <span class="badge badge-info right">3</span>
               </p>
             </a>
-            <ul class="nav nav-treeview" style="display: none;">
+
+
+            <ul class="nav nav-treeview" >
               <li class="nav-item">
-                <a href="<?= base_url('Category') ?>"  class="nav-link" >
+                <a href="<?= base_url('Category') ?>"  class="nav-link " >
                   <i class="far fa-circle nav-icon"></i>
                   <p>Kategori/Jenis barang</p>
                 </a>
               </li>
+              
+
+
+
               <li class="nav-item">
-                <a href="<?= base_url('unit') ?>"  class="nav-link">
+                <a href="<?= base_url('unit') ?>"  class="nav-link " >
                   <i class="far fa-circle nav-icon"></i>
                   <p>Satuan Unit</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url('item') ?>"  class="nav-link">
+                <a href="<?= base_url('item') ?>"  class="nav-link" >
                   <i class="far fa-circle nav-icon"></i>
                   <p>Stock</p>
                 </a>
@@ -264,7 +264,7 @@
 
           
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link " >
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Barang Masuk/Kel
@@ -273,15 +273,15 @@
               </p>
             </a>
             <ul class="nav nav-treeview"  >
-              <li class="nav-item">
-                <a href="<?= base_url('stock/in') ?>" class="nav-link">
+              <li class="nav-item ">
+                <a href="<?= base_url('stock/in') ?>" class="nav-link " >
                   <i class="far fa-circle nav-icon"></i>
                   <p>Barang masuk</p>
                 </a>
               </li>
              
               <li class="nav-item">
-                <a href="<?= base_url('stock/out') ?>" class="nav-link">
+                <a href="<?= base_url('stock/out') ?>" class="nav-link " >
                   <i class="far fa-circle nav-icon"></i>
                   <p>Barang hilang/keluar</p>
                 </a>
@@ -291,30 +291,32 @@
 
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link " >
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Identity Barang
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
+                <span class="badge badge-info right">3</span>
               </p>
             </a>
             <ul class="nav nav-treeview"  >
               <li class="nav-item">
-                <a href="<?= base_url('identifikasibarang/out') ?>" class="nav-link">
+                <a href="<?= base_url('identifikasibarang/out') ?>" class="nav-link " >
                   <i class="far fa-circle nav-icon"></i>
                   <p>Barang rusak</p>
                 </a>
               </li>
+
+              
              
               <li class="nav-item">
-                <a href="<?= base_url('identifikasibarang/perawatan') ?>" class="nav-link">
+                <a href="<?= base_url('identifikasibarang/perawatan') ?>" class="nav-link " >
                   <i class="far fa-circle nav-icon"></i>
                   <p>Diperbaiki</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url('identifikasibarang/rusak') ?>" class="nav-link">
+                <a href="<?= base_url('identifikasibarang/rusak') ?>" class="nav-link " >
                   <i class="far fa-circle nav-icon"></i>
                   <p>Rusak total/hangus</p>
                 </a>
@@ -324,24 +326,24 @@
 
             
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link " >
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Peminjaman
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
+                <span class="badge badge-info right">2</span>
               </p>
             </a>
             <ul class="nav nav-treeview"  >
               <li class="nav-item">
-                <a href="<?= base_url('pinjam/in') ?>" class="nav-link">
+                <a href="<?= base_url('pinjam/in') ?>" class="nav-link " >
                   <i class="far fa-circle nav-icon"></i>
                   <p>Di pinjam</p>
                 </a>
               </li>
              
               <li class="nav-item">
-                <a href="<?= base_url('pinjamkembalikan') ?>" class="nav-link">
+                <a href="<?= base_url('pinjamkembalikan') ?>" class="nav-link " >
                   <i class="far fa-circle nav-icon"></i>
                   <p>Di kembalikan</p>
                 </a>
@@ -349,9 +351,12 @@
            
             </ul>
           </li>
+
+     
+          
                 <!-- menambahkan nav baru li diahiri </li -->
                 <li class="nav-item">
-                            <a href="<?= base_url('userdatane') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'userdatane') echo 'active' ?>">
+                            <a href="<?= base_url('userdatane') ?>" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
                               <p>
                                 Data Users
@@ -362,7 +367,7 @@
 
                           <!-- menambahkan nav baru li diahiri </li -->
                 <li class="nav-item">
-                            <a href="<?= base_url('Transaksi') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'userdatane') echo 'active' ?>">
+                            <a href="<?= base_url('Transaksi') ?>" class="nav-link ">
                             <i class="nav-icon fas fa-th"></i>
                               <p>
                                 Laporan
@@ -374,7 +379,7 @@
 
                                   <!-- menambahkan nav baru li diahiri </li -->
                 <li class="nav-item">
-                            <a href="<?= base_url('laporanpinjam') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'userdatane') echo 'active' ?>">
+                            <a href="<?= base_url('laporanpinjam') ?>" class="nav-link ">
                             <i class="nav-icon fas fa-th"></i>
                               <p>
                                 Laporan pinjam
@@ -383,13 +388,14 @@
                             </a>
                         </li>
                             <li class="nav-item">
-            <a href="auth/logout" class="nav-link">
+            <a href="auth/logout" class="nav-link " >
               <i class="nav-icon far fa-circle text-danger"></i>
               <p class="text">Logout wae</p>
             </a>
           </li>
                     </ul>
                 </nav>
+                
                 <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->
@@ -443,7 +449,7 @@
 <script src="<?=base_url()?>assets/plugins/toastr/toastr.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?=base_url()?>assets/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
+
 <script>
   $(document).ready(function(){
   $('#table1').DataTable()  
@@ -481,6 +487,22 @@ $(document).on('click', '#btn-hapus', function(e) {
 
 
 </script>
+
+<script>
+  /** add active class and stay opened when selected */
+var url = window.location;
+
+// for sidebar menu entirely but not cover treeview
+$('ul.nav-sidebar a').filter(function() {
+    return this.href == url;
+}).addClass('active');
+
+// for treeview
+$('ul.nav-treeview a').filter(function() {
+    return this.href == url;
+}).parentsUntil(".nav-sidebar > .nav-treeview").addClass('menu-open').prev('a').addClass('active');
+</script>
+
 
 </body>
 </html>

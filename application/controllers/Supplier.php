@@ -15,9 +15,16 @@ class Supplier extends CI_Controller {
     
 	public function index()
 	{
-		$tampilno['row'] = $this->supplier_m->get();
+        $tampilno['row'] = $this->supplier_m->get();
 		$this->template->load('template', 'supplier/viewne_supplier', $tampilno);
+        
+        $data['title'] = 'Codeigniter 3 - PHPSpreadsheet';
+        $data['transaction_list'] = $this->supplier_m->fetch_transactions();
+        
+        
+       
 	}
+
 
 	public function hapus($id) 
     {

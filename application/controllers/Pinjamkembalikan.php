@@ -84,31 +84,21 @@ class Pinjamkembalikan extends CI_Controller {
         }
     }
 
-    public function del(){
-       $pinjam_id = $this->uri->segment(4);
-       $item_id = $this->uri->segment(5);
-       $qty = $this->pinjam_m->get($pinjam_id)->row()->qty;
-       $data = ['qty' => $qty, 'item_id'=> $item_id];
-       
-       $this->pinjam_m->del($pinjam_id);
-       if($this->db->affected_rows() > 0){
-        $this->session->set_flashdata('success', 'Data pinjam-in berhasil dihapus');
-    }
-    redirect('pinjamkembalikan');
 
-    }
 
-    public function pinjam_in_deldua(){
+ 
+
+    public function delgakpengaruhstock(){
         $pinjam_id = $this->uri->segment(4);
         $item_id = $this->uri->segment(5);
         $qty = $this->pinjam_m->get($pinjam_id)->row()->qty;
         $data = ['qty' => $qty, 'item_id'=> $item_id];
-        $this->item_m->update_pinjam_in($data);
+       
         $this->pinjam_m->del($pinjam_id);
         if($this->db->affected_rows() > 0){
          $this->session->set_flashdata('success', 'Data pinjam-out berhasil dihapus');
      }
-     redirect('pinjam/out');
+     redirect('pinjamkembalikan');
  
      }
 

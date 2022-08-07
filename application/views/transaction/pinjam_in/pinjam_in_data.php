@@ -19,6 +19,15 @@
               </div>
       
 </div>
+
+<div class="box">
+<div class="btn pull-right">
+              <a href="<?=base_url('pinjam/edit/')?>" class="btn btn-primary">
+              Kembalikan pinjaman
+                </a>     
+              </div>
+      
+</div>
        
 
   
