@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Agu 2022 pada 19.20
+-- Waktu pembuatan: 05 Agu 2022 pada 19.10
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -66,18 +66,6 @@ CREATE TABLE `tabel_peminjam` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tabel_peminjam`
---
-
-INSERT INTO `tabel_peminjam` (`peminjam_id`, `namapeminjam`, `item_id`, `type`, `qty`, `tanggalpinjam`, `tanggaldikembalikan`, `NIK`, `status`, `kondisibarang`, `user_id`) VALUES
-(78, 'pak wahyu', 18, 'in', 2, '2022-08-01', NULL, '11234567', 'K', 'goodCONDITION', 1),
-(79, 'Pak ipunk', 18, 'in', 11, '2022-08-01', '0000-00-00', '1235780', 'P', 'bagus', 1),
-(80, 'Pak sur', 18, 'in', 5, '2022-08-01', '2022-08-01', '3242345354', 'P', 'ok', 1),
-(81, 'Pak susanto', 18, 'in', 7, '2022-08-01', '2022-10-01', '2352345', 'P', 'bagus gapapa', 1),
-(82, 'Pak wahyu', 18, 'in', 2, '2022-07-21', '2022-09-01', '111222333', 'K', 'berhasil', 1),
-(84, 'P.alex', 18, 'in', 4, '2022-08-01', '0000-00-00', '1112223455', 'P', 'bagus', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -99,7 +87,8 @@ INSERT INTO `tabel_produkcategory` (`category_id`, `name`, `created`, `updated`)
 (12, 'makanan', '2022-07-18 17:05:11', '2022-07-30 07:10:17'),
 (13, 'minuman', '2022-07-18 17:05:21', '2022-07-30 07:07:56'),
 (15, 'Charger', '2022-07-19 10:19:07', NULL),
-(16, 'Mouse', '2022-07-19 10:38:18', NULL);
+(16, 'Mouse', '2022-07-19 10:38:18', NULL),
+(25, 'Laptop', '2022-08-03 19:06:01', NULL);
 
 -- --------------------------------------------------------
 
@@ -126,7 +115,8 @@ CREATE TABLE `tabel_produkitem` (
 --
 
 INSERT INTO `tabel_produkitem` (`item_id`, `barcode`, `name`, `category_id`, `unit_id`, `price`, `stock`, `image`, `created`, `updated`, `lokasi`) VALUES
-(18, '21908', 'charger lenovo Yi345', 15, 13, 150000, 110, 'item-220731-3f41ee7474.png', '2022-07-31 12:00:37', NULL, 'Lab pojok');
+(18, '21908', 'charger lenovo Yi345', 15, 13, 150000, 159, 'item-220731-3f41ee7474.png', '2022-07-31 12:00:37', NULL, 'Lab pojok'),
+(19, 'L001', 'Laptop dell e7440', 25, 14, 4700000, 98, NULL, '2022-08-03 19:09:20', '2022-08-03 19:09:28', 'Lab pojok');
 
 -- --------------------------------------------------------
 
@@ -148,7 +138,8 @@ CREATE TABLE `tabel_produkunit` (
 INSERT INTO `tabel_produkunit` (`unit_id`, `name`, `created`, `updated`) VALUES
 (11, 'kilogram', '2022-07-18 17:07:20', NULL),
 (12, 'Buah', '2022-07-18 17:07:29', NULL),
-(13, 'pcs', '2022-07-19 10:23:31', NULL);
+(13, 'pcs', '2022-07-19 10:23:31', NULL),
+(14, 'perunit', '2022-08-03 19:06:26', NULL);
 
 -- --------------------------------------------------------
 
@@ -165,15 +156,22 @@ CREATE TABLE `tabel_stock` (
   `qty` int(11) NOT NULL,
   `date` date NOT NULL,
   `created` datetime NOT NULL DEFAULT current_timestamp(),
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL,
+  `statusperbaikan` enum('rusaktotal','rskperbaikan','perawatan') NOT NULL,
+  `diperbaikitanggal` date DEFAULT NULL,
+  `lokasibarangperbaikan` varchar(400) DEFAULT NULL,
+  `keteranganrusak` varchar(400) NOT NULL,
+  `barcodekerusakan` varchar(400) DEFAULT NULL,
+  `detailperbaikan` varchar(400) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `tabel_stock`
 --
 
-INSERT INTO `tabel_stock` (`stock_id`, `item_id`, `type`, `detail`, `supplier_id`, `qty`, `date`, `created`, `user_id`) VALUES
-(19, 18, 'in', 'kulakan', 6, 50, '2022-07-31', '2022-07-31 17:00:54', 1);
+INSERT INTO `tabel_stock` (`stock_id`, `item_id`, `type`, `detail`, `supplier_id`, `qty`, `date`, `created`, `user_id`, `statusperbaikan`, `diperbaikitanggal`, `lokasibarangperbaikan`, `keteranganrusak`, `barcodekerusakan`, `detailperbaikan`) VALUES
+(19, 18, 'in', 'kulakan', 6, 50, '2022-07-31', '2022-07-31 17:00:54', 1, '', NULL, NULL, '', NULL, NULL),
+(25, 19, 'in', 'tambah laptop dana bos', 11, 100, '2022-08-03', '2022-08-04 00:12:06', 1, '', NULL, NULL, '', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -322,31 +320,31 @@ ALTER TABLE `tabel_customer`
 -- AUTO_INCREMENT untuk tabel `tabel_peminjam`
 --
 ALTER TABLE `tabel_peminjam`
-  MODIFY `peminjam_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `peminjam_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT untuk tabel `tabel_produkcategory`
 --
 ALTER TABLE `tabel_produkcategory`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT untuk tabel `tabel_produkitem`
 --
 ALTER TABLE `tabel_produkitem`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `tabel_produkunit`
 --
 ALTER TABLE `tabel_produkunit`
-  MODIFY `unit_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `unit_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `tabel_stock`
 --
 ALTER TABLE `tabel_stock`
-  MODIFY `stock_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `stock_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT untuk tabel `tabel_supplier`
