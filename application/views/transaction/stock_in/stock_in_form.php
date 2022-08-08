@@ -93,7 +93,7 @@
               </div>
            
               <div class="form-group">
-                <label>Qty *</label>
+                <label>Jumlah barang masuk berapa unit *</label>
                 <input type="text" name="qty"  class="form-control" required>
               </div>
              
@@ -109,7 +109,7 @@
               </form>  
  </section>                
               <div class="modal fade" id="modal-item">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl">
             <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">

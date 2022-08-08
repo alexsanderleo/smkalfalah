@@ -39,7 +39,7 @@ public function get_pinjam_in()
     $this->db->from('tabel_peminjam');
     $this->db->join('tabel_produkitem', 'tabel_peminjam.item_id= tabel_produkitem.item_id');
    
-    $this->db->where('status', 'P');
+    $this->db->where('status', 'diPinjam');
     $this->db->order_by('peminjam_id', 'desc');
     $query = $this->db->get();
     return $query;
@@ -89,7 +89,7 @@ public function tampilkanseluruhdatane()
     $this->db->from('tabel_peminjam');
     $this->db->join('tabel_produkitem', 'tabel_peminjam.item_id= tabel_produkitem.item_id');
    
-    $this->db->where('status', 'K');
+    $this->db->where('status', 'diKembalikan');
     $this->db->order_by('peminjam_id', 'desc');
     $query = $this->db->get();
     return $query;

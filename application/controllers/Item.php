@@ -7,7 +7,7 @@ class item extends CI_Controller {
         parent::__construct();
         check_not_login();     
         check_admin();
-        $this->load->model(['item_m','category_m','unit_m']);
+        $this->load->model(['item_m','category_m','unit_m','lokasi_m']);
         
     }
 	public function index()
@@ -38,14 +38,16 @@ class item extends CI_Controller {
         $item->price = null;
         $item->category_id = null;
         $item->unit_id = null;
+        $item->lokasi_id = null;
        $category = $this->category_m->get();
        $unit = $this->unit_m->get();
+       $lokasi = $this->lokasi_m->get();
         $data = array(
             'page' => 'tambah',
             'row' =>$item,
             'category'=>$category,
             'unit'=>$unit,
-            
+            'lokasi'=>$lokasi,
         );
 		$this->template->load('template', 'item/viewne_itemtambah', $data);
 	}

@@ -71,14 +71,14 @@
                 <select name="statusecbb" class="form-control custom-select">
                  
                  
-                  <option value="K">Di Kembalikan</option>
+                  <option value="diKembalikan">Di Kembalikan</option>
                
                 </select>
     
               
            
               <div class="form-group">
-                <label>Total BRG.YG.DIKEMBALIKAN</label>
+                <label>Total BRG.YG.DIKEMBALIKAN (WAJIB MENGEMBALIKAN SEMUANYA)</label>
                 <input type="text" name="qty" id="qty" class="form-control" readonly>
               </div>
 

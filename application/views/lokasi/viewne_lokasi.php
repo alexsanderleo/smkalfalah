@@ -1,4 +1,4 @@
-<h3 class="card-header">Data Stock/Item</h3>
+<h3 class="card-header">Data Lokasi</h3>
 <section class="content">
 <div class="container-fluid">
 <div class="row">
@@ -14,7 +14,7 @@ Actions
        <div class="box-header">
              </div>
                   <div class="btn btn-sm">
-              <a href="<?=site_url('item/tambah')?>" class="btn btn-primary">
+              <a href="<?=site_url('lokasi/tambah')?>" class="btn btn-primary">
               <i class="fas fa-plus"></i> Tambah
                 </a>     
               </div>
@@ -42,15 +42,7 @@ Actions
                 <thead>
                   <tr>
                     <th style="width: 10px">#</th>
-                    <th>Barcode</th>
-                    <th>Nama</th>
-                    <th>kategori</th>
-                    <th>Unit</th>
-                    <th>harga</th>
-                    <th>Stock</th>
-                    <th>Gambar</th>
-                    <th>Lokasi</th>
-                    
+                    <th>Nama lokasi</th>
                     <th>Aksi</th>
                     
                     
@@ -61,29 +53,18 @@ Actions
                   foreach($row->result() as $key => $tampilno){  ?>
                    <tr>
                     <td><?=$no++?>.</td>
-                    <td><?=$tampilno->barcode?></td>
-                    <td><?=$tampilno->name?></td>
-                    <td><?=$tampilno->kategori_name?></td>
-                    <td><?=$tampilno->unite_name?></td>
-                    <td class="text-right"> <?=indo_currency($tampilno->price)?> </td>
-                    <td><?=$tampilno->stock?></td>
+                    <td><?=$tampilno->namalokasi?></td>
                     
-                    <td>
-                      <?php if($tampilno->image != null) { ?>
-                        <img src="<?=base_url('uploads/product/'.$tampilno->image)?>" style="width:100px">
-                      <?php } ?>
-                      <td><?=$tampilno->lokasi_jeneng?></td>
-                    </td>
                        <td>
 
                       <!--------------------------------------------MEMBUAT----------------------------------------BTN--EDIT--HAPUYS START--------------------------->
                       <div class="card-btn">
-              <a class="btn btn-info btn-sm" href="<?=site_url('item/edit/'.$tampilno->item_id)?>" >  <!--$tampilno kwi dari 1 form ini--------------------------->
+              <a class="btn btn-info btn-sm" href="<?=site_url('lokasi/edit/'.$tampilno->lokasi_id)?>" onclick="return confirm('Yakin edit data?')">  <!--$tampilno kwi dari 1 form ini--------------------------->
                               
                               </i>
                               Edit
                               </a>
-                      <a class="btn btn-danger btn-sm" href="<?=site_url('item/hapus/'.$tampilno->item_id)?>"onclick="return confirm('Yakin hapus data?')">
+                      <a class="btn btn-danger btn-sm" href="<?=site_url('lokasi/hapus/'.$tampilno->lokasi_id)?>" id="btn-hapus">
                               </i>
                               Delete
                               </a>
@@ -102,7 +83,8 @@ Actions
                 </tbody>
               </table>
             </div>
-         
+            <!-- /.card-body -->
+          
                 </tbody>
               </table>
          

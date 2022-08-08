@@ -1,27 +1,69 @@
-
-
+<h3 class="card-header">Data Kategori</h3>
 <section class="content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12">
+<div class="card card-primary card-outline">
+<div class="card-header">
+<h3 class="card-title">
 
- <div id="flash" data-flash="<?=$this->session->flashdata('success');?>"> </div>
-
+Actions
+</h3>
+</div>
+<section class="content">
+      
       <div class="box">
        <div class="box-header">
-              <h3 class="card-header"> Pemasok barange = category</h3>
+            
             </div>
             <!-------------------------MEnambahkan buton-------------------->
-            <div class="btn pull-right">
+            <div class="btn btn-sm">
               <a href="<?=site_url('category/tambah')?>" class="btn btn-primary">
-              Tambah
+              <i class="fas fa-plus"></i> Tambah
+          
                 </a>     
               </div>
+
+
+         
+
+
+</div>
+</section>
+
+<div class="container">
+
+    </div>
+
+</div>
               
-              
-             
+         
+</h3>
+</div>
+
+
+<div class="container">
+
+    </div>
+
+</div>
+
+
+ <!-- Content Page -->
+
+<!-------------------------END-------MEnambahkan buton-------------------->
+
+<!-- ----------------------------------------------------------------------START IMPORT---------------------------------------------------------------------------- -->
+
+
 <!-------------------------END-------MEnambahkan buton-------------------->
             
             <div class="card table-responsive">
               <!--=================================== NAMPILNE HASIL RESULT DATABASE <?php print_r($row->result()) ?> ----------------------------------------------------->
-              <table class="table table-bordered" id="table1">
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+              
+                
                 <thead>
                   <tr>
                     <th style="width: 10px">#</th>
@@ -63,22 +105,11 @@
 
                  <!--------------------------------------------ENDDDD------------------------------------MEMBUAT--BTN--EDIT--HAPUYS START--------------------------->
                  
-                </tbody>
+                 </tbody>
               </table>
-            </div>
-            <!-- /.card-body -->
-            <div class="card-footer clearfix">
-              <ul class="pagination pagination-sm m-0 float-right">
-                <li class="page-item"><a class="page-link" href="#">«</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">»</a></li>
-              </ul>
-            </div>
+            </div>         
           </div>
-
-                </tbody>
-              </table>
+           
          
   </section>
+

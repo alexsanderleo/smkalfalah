@@ -39,6 +39,7 @@
             <div class="form-group">
                 <label>Barcode * </label>
                 <input type="hidden" name="id" value="<?=$row->item_id?>">
+                
                 <input type="text" name="barcodete" value="<?=$row->barcode?>" class="form-control" required> <!--type= adalah model form e , sedangkan name=nama yg akan dihubungkan ke database -->
                
               </div>
@@ -52,6 +53,9 @@
                 <?php } ?>
                </select>
               </div>
+
+
+              
               <div class="form-group">
                 <label>Unit  </label>
                 <select name="unit" class= "form-control"> <!--<select name="unit" adalah harus disamakan dengan name database --> 
@@ -61,6 +65,10 @@
                 <?php } ?>
                </select>
               </div>
+
+            
+
+
               <div class="form-group">
                 <label>Nama  </label>
                 <input type="text" name="jenenge" value="<?=$row->name?>" class="form-control" required> <!--type= adalah model form e , sedangkan name=nama yg akan dihubungkan ke database --> 
@@ -73,8 +81,13 @@
               </div>
               
               <div class="form-group">
-                <label>Lokasi</label>
-                <input type="text" name="lokasine" value="<?=$row->lokasi?>" class="form-control" required> <!--type= adalah model form e , sedangkan name=nama yg akan dihubungkan ke database --> 
+                <label>Lokasi  </label>
+                <select name="lokasine" class= "form-control"> <!--<select name="unit" adalah harus disamakan dengan name database --> 
+                <option value="">- Pilih -</option>
+                <?php foreach($lokasi->result() as $key => $data) { ?>
+                  <option value="<?=$data->lokasi_id?>"<?=$data->lokasi_id == $row->lokasi_id ? "selected" : null?>><?=$data->namalokasi?></option>
+                <?php } ?>
+               </select>
               </div>
              
              

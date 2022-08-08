@@ -1,22 +1,18 @@
+<section class="content">
 
- <section class="content-header">
-
- 
 
 <div class="box">
          <div class="box-header">
-                <h3 class="box-title">Stock Oute Barang masuk / pembelian</h3>
+              <h3> Tambah barang hilang/keluar</h3>
               </div>
               <!-------------------------MEnambahkan buton-------------------->
               <div class="card-body">
         <div class="col-md-4 col-md-offset-4">
-          <a href="<?=site_url('stock/out')?>" class="btn btn-secondary">Kembali</a>
+        
+          <a href="<?=site_url('category')?>" class="btn btn-default"><span class="fa fa-chevron-left"></span>Kembali</button></a>
+          
         </div>
       </div>
-</section>      
-      
- <!-------------------------END-------MEnambahkan buton-------------------->
- <section class="content">
 
 
 
@@ -78,14 +74,14 @@
       
 
               <div class="form-group">
-                <label>Details * </label>
+                <label>Details/Catatan * </label>
                 <input type="text" name="detail"  class="form-control" placeholder="rusak / dibuang / guwak" >
               </div>
     
              
            
               <div class="form-group">
-                <label>Qty *</label>
+                <label>Jumlah barang hilang/Qty *</label>
                 <input type="text" name="qty"  class="form-control" required>
               </div>
              
@@ -101,7 +97,7 @@
               </form>  
  </section>                
               <div class="modal fade" id="modal-item">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl">
             <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">

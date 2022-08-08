@@ -1,39 +1,44 @@
-
- <section class="content-header">
- <div class="box-header">
-                <h3 class="box-title">Barang di pinjamkan</h3>
-              </div>
-              <!-------------------------MEnambahkan buton-------------------->
-              <div class="card-body">
-        <div class="col-md-4 col-md-offset-4">
-          <a href="<?=site_url('')?>" class="btn btn-secondary">Kembali</a>
-        </div>
-      </div>
- 
-
-<div class="box">
-<div class="btn pull-right">
-              <a href="<?=base_url('pinjam/in/add')?>" class="btn btn-primary">
-              Tambah Pinjaman baru
+<h3 class="card-header">Data Stock/Item</h3>
+<section class="content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12">
+<div class="card card-primary card-outline">
+<div class="card-header">
+<h3 class="card-title">
+Actions
+</h3>
+</div>
+<section class="content">
+       <div class="box">
+       <div class="box-header">
+             </div>
+                  <div class="btn btn-sm">
+              <a href="<?=site_url('pinjam/in/add')?>" class="btn btn-primary">
+              <i class="fas fa-plus"></i> Tambah pinjam
                 </a>     
               </div>
-      
+
+           
+</div>
+</section>
+<div class="container">
+    </div>
+</div>
+ </div>
+<div class="container">
+    </div>
 </div>
 
-<div class="box">
-<div class="btn pull-right">
-              <a href="<?=base_url('pinjam/edit/')?>" class="btn btn-primary">
-              Kembalikan pinjaman
-                </a>     
-              </div>
-      
-</div>
        
 
   
 <div class="card table-responsive">
               <!--=================================== NAMPILNE HASIL RESULT DATABASE  ----------------------------------------------------->
+              <div class="card-body">
               <table class="table table-bordered" id="table1">
+              
+                <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
                     <th style="width: 10px">#</th>
@@ -69,12 +74,12 @@
 
                       <!--------------------------------------------MEMBUAT----------------------------------------BTN--EDIT--HAPUYS START--------------------------->
                       <div class="card-btn">
-              <a class="btn btn-primary btn-sm" href="<?=site_url('pinjam/edit/'.$data->peminjam_id)?>" onclick="return confirm('Yakin edit data?')" >  <!--$tampilno kwi dari 1 form ini--------------------------->
+              <a class="btn btn-primary btn-sm" href="<?=site_url('pinjam/edit/'.$data->peminjam_id)?>" onclick="return confirm('Yakin akan mengembalikan pinjaman?')" >  <!--$tampilno kwi dari 1 form ini--------------------------->
                               
                               </i>
                               Kembalikan barang pinjam
                               </a>
-                      <a class="btn btn-danger btn-sm" href="<?=site_url('pinjam/in/del/'.$data->peminjam_id.'/'.$data->item_id)?>"onclick="return confirm('Yakin akan mengembalikan pinjaman?')">
+                      <a class="btn btn-danger btn-sm" href="<?=site_url('pinjam/in/del/'.$data->peminjam_id.'/'.$data->item_id)?>"onclick="return confirm('Yakin akan menghapus pinjaman?')">
                               </i>
                               Delete
                               </a>

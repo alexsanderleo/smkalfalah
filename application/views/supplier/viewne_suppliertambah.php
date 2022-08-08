@@ -3,12 +3,12 @@
 <section class="content">
 <div class="box">
          <div class="box-header">
-                <h3 class="box-title"><?=ucfirst($page)?> data suppliere</h3>
+                <h3 class="box-title"><?=ucfirst($page)?> Supplier</h3>
               </div>
               <!-------------------------MEnambahkan buton-------------------->
               <div class="card-body">
         <div class="col-md-4 col-md-offset-4">
-          <a href="<?=site_url('supplier')?>" class="btn btn-secondary">Kembali</a>
+          <a href="<?=site_url('supplier')?>" class="btn btn-default"><span class="fa fa-chevron-left"></span>Kembali</button></a>
         </div>
       </div>
             
@@ -55,7 +55,7 @@
 
               
               <div class="form-group">
-                <label>Deskripsi </label>
+                <label>Deskripsi/Catatan </label>
                 <textarea name="descr" class="form-control"><?=$row->description?></textarea>
               
               </div>

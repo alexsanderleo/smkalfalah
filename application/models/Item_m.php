@@ -5,10 +5,11 @@ class item_m extends CI_Model {
 
 public function get($id = null) //get relasi 2 tabel
 	{
-		$this->db->select('tabel_produkitem.*, tabel_produkcategory.name as kategori_name, tabel_produkunit.name as unite_name ');
+		$this->db->select('tabel_produkitem.*, tabel_produkcategory.name as kategori_name, tabel_produkunit.name as unite_name,tabel_lokasi.namalokasi as lokasi_jeneng ');
 		$this->db->from('tabel_produkitem');
 		$this->db->join('tabel_produkcategory', 'tabel_produkcategory.category_id = tabel_produkitem.category_id');
 		$this->db->join('tabel_produkunit', 'tabel_produkunit.unit_id = tabel_produkitem.unit_id');
+		$this->db->join('tabel_lokasi', 'tabel_lokasi.lokasi_id = tabel_produkitem.lokasi_id');
 		
 		if($id != null) {
 			$this->db->where('item_id', $id);
@@ -35,7 +36,7 @@ $params['unit_id'] = $post['unit'];
 $params['price'] = $post['rego'];
 $params['image'] = $post['image'];
 $params['created'] = date('Y-m-d H:i:s');
-$params['lokasi'] = $post['lokasine'];
+$params['lokasi_id'] = $post['lokasine'];
 		
 		$this->db->insert('tabel_produkitem', $params);
 }
@@ -46,7 +47,7 @@ public function edit($post){
 	$params['category_id'] = $post['category'];
 	$params['unit_id'] = $post['unit'];
 	$params['price'] = $post['rego'];
-	$params['lokasi'] = $post['lokasine'];
+	$params['lokasi_id'] = $post['lokasine'];
 
 			
 			$params['updated'] = date('Y-m-d H:i:s');

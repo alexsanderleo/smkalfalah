@@ -1,21 +1,23 @@
-
+<section class="content">
 
 
 <div class="box">
          <div class="box-header">
-                <h3 class="box-title"><?=ucfirst($page)?> data categorye</h3>
+                <h3 class="box-title"><?=ucfirst($page)?> kategori</h3>
               </div>
               <!-------------------------MEnambahkan buton-------------------->
               <div class="card-body">
         <div class="col-md-4 col-md-offset-4">
-          <a href="<?=site_url('category')?>" class="btn btn-secondary">Kembali</a>
+        
+          <a href="<?=site_url('category')?>" class="btn btn-default"><span class="fa fa-chevron-left"></span>Kembali</button></a>
+          
         </div>
       </div>
             
       
  <!-------------------------END-------MEnambahkan buton-------------------->
  
- <section class="content">
+
 
 
                   <div class="box">
@@ -36,7 +38,7 @@
             <div class="card-body">
 
             <div class="form-group">
-                <label>Nama category * </label>
+                <label>Nama Kategori * </label>
                 <input type="hidden" name="id" value="<?=$row->category_id?>">
                 <input type="text" name="jenenge" value="<?=$row->name?>" class="form-control" required> <!--type= adalah model form e , sedangkan name=nama yg akan dihubungkan ke database -->
                

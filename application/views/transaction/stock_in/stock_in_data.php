@@ -1,37 +1,47 @@
-
- <section class="content-header">
- <div class="box-header">
-                <h3 class="box-title">Stock in Barang masuk / pembelian</h3>
-              </div>
-              <!-------------------------MEnambahkan buton-------------------->
-              <div class="card-body">
-        <div class="col-md-4 col-md-offset-4">
-          <a href="<?=site_url('')?>" class="btn btn-secondary">Kembali</a>
-        </div>
-      </div>
- 
-
-<div class="box">
-<div class="btn pull-right">
-              <a href="<?=base_url('stock/in/add')?>" class="btn btn-primary">
-              Tambah
+<h3 class="card-header">Data Satuan Unit</h3>
+<section class="content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12">
+<div class="card card-primary card-outline">
+<div class="card-header">
+<h3 class="card-title">
+Actions
+</h3>
+</div>
+<section class="content">
+       <div class="box">
+       <div class="box-header">
+             </div>
+                  <div class="btn btn-sm">
+              <a href="<?=site_url('stock/in/add')?>" class="btn btn-primary">
+              <i class="fas fa-plus"></i> Tambah
                 </a>     
               </div>
-      
+</div>
+</section>
+<div class="container">
+    </div>
+</div>
+ </div>
+<div class="container">
+    </div>
 </div>
        
 
   
 <div class="card table-responsive">
               <!--=================================== NAMPILNE HASIL RESULT DATABASE  ----------------------------------------------------->
+              <div class="card-body">
               <table class="table table-bordered" id="table1">
+              <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
                     <th style="width: 10px">#</th>
                     <th>Barcode</th>
-                    <th>Product Item</th>
-                    <th>Quantyty</th>
-                    <th>keterangan</th>
+                    <th>Nama item</th>
+                    <th>Jumlah barang masuk/unit</th>
+                    <th>Keterangan/catatan</th>
                     <th>Tanggal</th>
                     <th>Opsi</th>
                    

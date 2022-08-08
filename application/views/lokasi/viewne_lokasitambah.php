@@ -3,12 +3,12 @@
 
 <div class="box">
          <div class="box-header">
-                <h3 class="box-title"><?=ucfirst($page)?> Data unit</h3>
+                <h3 class="box-title"><?=ucfirst($page)?> data lokasi</h3>
               </div>
               <!-------------------------MEnambahkan buton-------------------->
               <div class="card-body">
         <div class="col-md-4 col-md-offset-4">
-          <a href="<?=site_url('unit')?>" class="btn btn-secondary">Kembali</a>
+          <a href="<?=site_url('lokasi')?>" class="btn btn-secondary">Kembali</a>
         </div>
       </div>
             
@@ -32,13 +32,13 @@
             </div>
 
 
-            <form action="<?=site_url('unit/process')?>" method="post">    
+            <form action="<?=site_url('lokasi/process')?>" method="post">    
             <div class="card-body">
 
             <div class="form-group">
-                <label>Nama unit * </label>
-                <input type="hidden" name="id" value="<?=$row->unit_id?>">
-                <input type="text" name="jenenge" value="<?=$row->name?>" class="form-control" required> <!--type= adalah model form e , sedangkan name=nama yg akan dihubungkan ke database -->
+                <label>Nama lokasi * </label>
+                <input type="hidden" name="id" value="<?=$row->lokasi_id?>">
+                <input type="text" name="jenenge" value="<?=$row->namalokasi?>" class="form-control" required> <!--type= adalah model form e , sedangkan name=nama yg akan dihubungkan ke database -->
                
               </div>
 
@@ -51,7 +51,7 @@
                   <div class="box">
                     
                 <button type="submit" name="<?=$page?>" class="btn btn-success btn-flat">Save</button>
-                <?php $this->view('messages')?>  
+                     
                 <button type="reset" class="btn btn-flat">reset</button>
               </div>
 

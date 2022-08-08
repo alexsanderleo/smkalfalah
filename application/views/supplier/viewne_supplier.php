@@ -1,5 +1,4 @@
-<h3 class="card-header"> Pemasok barange = supplier</h3>
-<i class="fa-thin fa-person-circle-plus"></i>
+<h3 class="card-header">Data Supplier</h3>
 <section class="content">
 <div class="container-fluid">
 <div class="row">
@@ -7,7 +6,7 @@
 <div class="card card-primary card-outline">
 <div class="card-header">
 <h3 class="card-title">
-<i class="fas fa-edit"></i>
+
 Actions
 </h3>
 </div>
@@ -18,30 +17,27 @@ Actions
             
             </div>
             <!-------------------------MEnambahkan buton-------------------->
-            <div class="btn pull-right">
+            <div class="btn btn-sm">
               <a href="<?=site_url('supplier/tambah')?>" class="btn btn-primary">
               <i class="fas fa-plus"></i> Tambah
           
                 </a>     
               </div>
 
-              <div class="btn pull-right">
-              <a href="<?=site_url('homeimport')?>" class="btn btn-primary">
+
+              <div class="btn btn-sm">
+              <a data-toggle="modal" data-target="#modalImport" class="btn btn-success">
               <i class="fas fa-file-import"></i> Import
-              Tambah form insert
+          
                 </a>     
               </div>
-
-              
-        <!-- Import Button -->
-        <a data-toggle="modal" data-target="#modalImport" class="btn btn-sm btn-success">
-            <i class="fas fa-file-import"></i> Import
-        </a>
-
-        <!-- Export Button -->
-        <a data-toggle="modal" data-target="#modalExport" class="btn btn-sm btn-primary">
+    
+<!-- Export Button -->
+        <div class="btn btn-sm">
+        <a data-toggle="modal" data-target="#modalExport" class="btn btn-block btn-info">
             <i class="fas fa-download"></i> Export
-        </a>
+            </a>     
+              </div>
 
 
 </div>
@@ -135,9 +131,12 @@ Actions
 <!-- ----------------------------------------------------------------------END IMPORT---------------------------------------------------------------------------- -->
 
             
-            <div class="card table-responsive">
+<div class="card table-responsive">
               <!--=================================== NAMPILNE HASIL RESULT DATABASE <?php print_r($row->result()) ?> ----------------------------------------------------->
-              <table class="table table-bordered" id="table1">
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+              
+                
                 <thead>
                   <tr>
                     <th style="width: 10px">#</th>

@@ -224,7 +224,7 @@
             <a href="#" class="nav-link " >
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Data Barang
+                Setting Master
                 <i class="fas fa-angle-left right"></i>
                 <span class="badge badge-info right">3</span>
               </p>
@@ -235,7 +235,7 @@
               <li class="nav-item">
                 <a href="<?= base_url('Category') ?>"  class="nav-link " >
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Kategori/Jenis barang</p>
+                  <p>Kategori</p>
                 </a>
               </li>
               
@@ -251,10 +251,18 @@
               <li class="nav-item">
                 <a href="<?= base_url('item') ?>"  class="nav-link" >
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Stock</p>
+                  <p>Items</p>
                 </a>
               </li>
            
+              <li class="nav-item">
+                <a href="<?= base_url('lokasi') ?>"  class="nav-link" >
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lokasi</p>
+                </a>
+              </li>
+
+
             </ul>
           </li>
          
@@ -294,7 +302,7 @@
             <a href="#" class="nav-link " >
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Identity Barang
+                Identifikasi Barang
                 <i class="fas fa-angle-left right"></i>
                 <span class="badge badge-info right">3</span>
               </p>
@@ -450,6 +458,7 @@
 <!-- AdminLTE App -->
 <script src="<?=base_url()?>assets/dist/js/adminlte.min.js"></script>
 
+
 <script>
   $(document).ready(function(){
   $('#table1').DataTable()  
@@ -503,6 +512,23 @@ $('ul.nav-treeview a').filter(function() {
 }).parentsUntil(".nav-sidebar > .nav-treeview").addClass('menu-open').prev('a').addClass('active');
 </script>
 
+  <script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
 
 </body>
 </html>
